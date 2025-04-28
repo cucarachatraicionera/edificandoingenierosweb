@@ -80,16 +80,16 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                   {showResume && (
                     <Button
                       onClick={() =>
-                        window.open("mailto:hello@chetanverma.com")
+                        window.open("mailto:edificandoingenierossas@gmail.com")
                       }
                     >
                       Resume
                     </Button>
                   )}
                   <Button
-                    onClick={() => window.open("mailto:hello@chetanverma.com")}
+                    onClick={() => window.open("mailto:edificandoingenierossas@gmail.com")}
                   >
-                    Contact
+                    Contacto
                   </Button>
                 </div>
               ) : (
@@ -109,9 +109,9 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                     </Button>
                   )}
                   <Button
-                    onClick={() => window.open("mailto:hello@chetanverma.com")}
+                    onClick={() => window.open("mailto:edificandoingenierossas@gmail.com")}
                   >
-                    Contact
+                    Contacto
                   </Button>
                 </div>
               )}
@@ -145,7 +145,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                 Resume
               </Button>
             )}
-            <Button onClick={() => window.open("mailto:hello@chetanverma.com")}>
+            <Button onClick={() => window.open("mailto:edificandoingenierossas@gmail.com")}>
               Contacto
             </Button>
             {mounted && theme && data.darkMode && (
@@ -174,7 +174,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                 Resume
               </Button>
             )}
-            <Button onClick={() => window.open("mailto:hello@chetanverma.com")}>
+            <Button onClick={() => window.open("mailto:edificandoingenierossas@gmail.com")}>
               Contacto
             </Button>
             {mounted && theme && data.darkMode && (
