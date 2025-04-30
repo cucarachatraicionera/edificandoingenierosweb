@@ -28,7 +28,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                 onClick={() => router.push("/")}
                 className="cursor-pointer flex items-center"
               >
-                <Image src="/logo.png" alt="Logo" width={120} height={60} />
+                <Image src="/logo.png" alt="Logo" width={60} height={60} />
               </div>
 
               <div className="flex items-center">
