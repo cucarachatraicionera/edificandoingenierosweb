@@ -20,9 +20,9 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                 onClick={() => router.push("/")}
                 className="cursor-pointer flex items-center"
               >
-                <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-md">
-                  <Image src="/logo.png" alt="Logo" width={40} height={40} />
-                </div>
+                <div className="w-[88px] h-[88px] rounded-full bg-white flex items-center justify-center overflow-hidden shadow-md">
+  <Image src="/logo.png" alt="Logo" width={88} height={88} />
+</div>
               </div>
 
               <div className="flex items-center">
@@ -81,8 +81,8 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
           onClick={() => router.push("/")}
           className="cursor-pointer flex items-center"
         >
-          <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-md">
-            <Image src="/logo.png" alt="Logo" width={40} height={40} />
+          <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-md">
+            <Image src="/logo.png" alt="Logo" width={80} height={80} />
           </div>
         </div>
         {!isBlog ? (
