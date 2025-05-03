@@ -3,12 +3,17 @@ import { useRouter } from "next/router";
 import React from "react";
 import Image from "next/image";
 import Button from "../Button";
+import { useTheme } from "next-themes"; // <-- Agregado
+
 // Local Data
 import data from "../../data/portfolio.json";
 
 const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
   const router = useRouter();
   const { name, showBlog, showResume } = data;
+  const { theme } = useTheme(); // <-- Tema actual
+
+  const isDark = theme === "dark";
 
   return (
     <>
@@ -16,7 +21,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
       <Popover className="block tablet:hidden mt-5">
         {({ open }) => (
           <>
-            <div className="flex items-center justify-between p-2 laptop:p-0 bg-black text-white">
+            <div className="flex items-center justify-between p-2 laptop:p-0">
               <div
                 onClick={() => router.push("/")}
                 className="cursor-pointer flex items-center"
@@ -35,7 +40,11 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
               </div>
             </div>
 
-            <Popover.Panel className="absolute right-0 z-10 w-11/12 p-4 bg-black text-white shadow-md rounded-md">
+            <Popover.Panel
+              className={`absolute right-0 z-10 w-11/12 p-4 shadow-md rounded-md ${
+                isDark ? "bg-black text-white" : "bg-white text-black"
+              }`}
+            >
               {!isBlog ? (
                 <div className="grid grid-cols-1">
                   <Button onClick={handleAboutScroll}>Sobre nosotros</Button>
@@ -43,11 +52,19 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                     <Button onClick={() => router.push("/blog")}>Proyectos</Button>
                   )}
                   {showResume && (
-                    <Button onClick={() => window.open("mailto:edificandoingenierossas@gmail.com")}>
+                    <Button
+                      onClick={() =>
+                        window.open("mailto:edificandoingenierossas@gmail.com")
+                      }
+                    >
                       Resume
                     </Button>
                   )}
-                  <Button onClick={() => window.open("mailto:edificandoingenierossas@gmail.com")}>
+                  <Button
+                    onClick={() =>
+                      window.open("mailto:edificandoingenierossas@gmail.com")
+                    }
+                  >
                     Contacto
                   </Button>
                 </div>
@@ -64,7 +81,11 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                       Resume
                     </Button>
                   )}
-                  <Button onClick={() => window.open("mailto:edificandoingenierossas@gmail.com")}>
+                  <Button
+                    onClick={() =>
+                      window.open("mailto:edificandoingenierossas@gmail.com")
+                    }
+                  >
                     Contacto
                   </Button>
                 </div>
@@ -75,7 +96,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
       </Popover>
 
       {/* Menú desktop */}
-      <div className="mt-10 hidden tablet:flex flex-row items-center justify-between sticky top-0 z-10 bg-black text-white px-4">
+      <div className="mt-10 hidden tablet:flex flex-row items-center justify-between sticky top-0 z-10 px-4">
         <div
           onClick={() => router.push("/")}
           className="cursor-pointer flex items-center"
@@ -93,7 +114,11 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                 Resume
               </Button>
             )}
-            <Button onClick={() => window.open("mailto:edificandoingenierossas@gmail.com")}>
+            <Button
+              onClick={() =>
+                window.open("mailto:edificandoingenierossas@gmail.com")
+              }
+            >
               Contacto
             </Button>
           </div>
@@ -108,7 +133,11 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                 Resume
               </Button>
             )}
-            <Button onClick={() => window.open("mailto:edificandoingenierossas@gmail.com")}>
+            <Button
+              onClick={() =>
+                window.open("mailto:edificandoingenierossas@gmail.com")
+              }
+            >
               Contacto
             </Button>
           </div>
