@@ -3,17 +3,11 @@ import { useRouter } from "next/router";
 import React from "react";
 import Image from "next/image";
 import Button from "../Button";
-import { useTheme } from "next-themes"; // <-- Agregado
-
-// Local Data
 import data from "../../data/portfolio.json";
 
 const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
   const router = useRouter();
   const { name, showBlog, showResume } = data;
-  const { theme } = useTheme(); // <-- Tema actual
-
-  const isDark = theme === "dark";
 
   return (
     <>
@@ -21,30 +15,28 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
       <Popover className="block tablet:hidden mt-5">
         {({ open }) => (
           <>
-            <div className="flex items-center justify-between p-2 laptop:p-0">
+            <div className="flex items-center justify-between p-2 laptop:p-0 bg-white text-black">
               <div
                 onClick={() => router.push("/")}
                 className="cursor-pointer flex items-center"
               >
-                <Image src="/logo.png" alt="Logo" width={60} height={60} />
+                <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-md">
+                  <Image src="/logo.png" alt="Logo" width={40} height={40} />
+                </div>
               </div>
 
               <div className="flex items-center">
                 <Popover.Button>
                   <img
                     className="h-5"
-                    src={`/images/${!open ? "menu-white.svg" : "cancel-white.svg"}`}
+                    src={`/images/${!open ? "menu-black.svg" : "cancel-black.svg"}`}
                     alt="menu-toggle"
                   />
                 </Popover.Button>
               </div>
             </div>
 
-            <Popover.Panel
-              className={`absolute right-0 z-10 w-11/12 p-4 shadow-md rounded-md ${
-                isDark ? "bg-black text-white" : "bg-white text-black"
-              }`}
-            >
+            <Popover.Panel className="absolute right-0 z-10 w-11/12 p-4 bg-white text-black shadow-md rounded-md">
               {!isBlog ? (
                 <div className="grid grid-cols-1">
                   <Button onClick={handleAboutScroll}>Sobre nosotros</Button>
@@ -52,19 +44,11 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                     <Button onClick={() => router.push("/blog")}>Proyectos</Button>
                   )}
                   {showResume && (
-                    <Button
-                      onClick={() =>
-                        window.open("mailto:edificandoingenierossas@gmail.com")
-                      }
-                    >
+                    <Button onClick={() => window.open("mailto:edificandoingenierossas@gmail.com")}>
                       Resume
                     </Button>
                   )}
-                  <Button
-                    onClick={() =>
-                      window.open("mailto:edificandoingenierossas@gmail.com")
-                    }
-                  >
+                  <Button onClick={() => window.open("mailto:edificandoingenierossas@gmail.com")}>
                     Contacto
                   </Button>
                 </div>
@@ -81,11 +65,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                       Resume
                     </Button>
                   )}
-                  <Button
-                    onClick={() =>
-                      window.open("mailto:edificandoingenierossas@gmail.com")
-                    }
-                  >
+                  <Button onClick={() => window.open("mailto:edificandoingenierossas@gmail.com")}>
                     Contacto
                   </Button>
                 </div>
@@ -96,12 +76,14 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
       </Popover>
 
       {/* Menú desktop */}
-      <div className="mt-10 hidden tablet:flex flex-row items-center justify-between sticky top-0 z-10 px-4">
+      <div className="mt-10 hidden tablet:flex flex-row items-center justify-between sticky top-0 z-10 bg-white text-black px-4">
         <div
           onClick={() => router.push("/")}
           className="cursor-pointer flex items-center"
         >
-          <Image src="/logo.png" alt="Logo" width={60} height={60} />
+          <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-md">
+            <Image src="/logo.png" alt="Logo" width={40} height={40} />
+          </div>
         </div>
         {!isBlog ? (
           <div className="flex">
@@ -114,11 +96,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                 Resume
               </Button>
             )}
-            <Button
-              onClick={() =>
-                window.open("mailto:edificandoingenierossas@gmail.com")
-              }
-            >
+            <Button onClick={() => window.open("mailto:edificandoingenierossas@gmail.com")}>
               Contacto
             </Button>
           </div>
@@ -133,11 +111,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                 Resume
               </Button>
             )}
-            <Button
-              onClick={() =>
-                window.open("mailto:edificandoingenierossas@gmail.com")
-              }
-            >
+            <Button onClick={() => window.open("mailto:edificandoingenierossas@gmail.com")}>
               Contacto
             </Button>
           </div>
