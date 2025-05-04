@@ -18,11 +18,15 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
             <div className="flex items-center justify-between p-2 laptop:p-0 bg-white text-black">
               <div
                 onClick={() => router.push("/")}
-                className="cursor-pointer flex items-center"
+                className="relative w-1/2 max-w-[200px] h-[100px] cursor-pointer"
               >
-                <div className="w-[88px] h-[88px] rounded-full bg-white flex items-center justify-center overflow-hidden shadow-md">
-                  <Image src="/logo.png" alt="Logo" width={88} height={88} />
-                </div>
+                <Image
+                  src="/logo.png"
+                  alt="Logo"
+                  layout="fill"
+                  objectFit="contain"
+                  priority
+                />
               </div>
 
               <div className="flex items-center">
@@ -97,11 +101,15 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
       <div className="mt-10 hidden tablet:flex flex-row items-center justify-between sticky top-0 z-10 bg-white text-black px-4">
         <div
           onClick={() => router.push("/")}
-          className="cursor-pointer flex items-center"
+          className="relative w-[220px] h-[120px] cursor-pointer"
         >
-          <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center overflow-hidden shadow-md">
-            <Image src="/logo.png" alt="Logo" width={80} height={80} />
-          </div>
+          <Image
+            src="/logo.png"
+            alt="Logo"
+            layout="fill"
+            objectFit="contain"
+            priority
+          />
         </div>
         {!isBlog ? (
           <div className="flex">
