@@ -21,17 +21,35 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                 className="cursor-pointer flex items-center"
               >
                 <div className="w-[88px] h-[88px] rounded-full bg-white flex items-center justify-center overflow-hidden shadow-md">
-  <Image src="/logo.png" alt="Logo" width={88} height={88} />
-</div>
+                  <Image src="/logo.png" alt="Logo" width={88} height={88} />
+                </div>
               </div>
 
               <div className="flex items-center">
-                <Popover.Button>
-                  <img
-                    className="h-5"
-                    src={`/images/${!open ? "menu-black.svg" : "cancel-black.svg"}`}
-                    alt="menu-toggle"
-                  />
+                <Popover.Button className="focus:outline-none">
+                  {!open ? (
+                    <svg
+                      className="h-6 w-6 text-black"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                  ) : (
+                    <svg
+                      className="h-6 w-6 text-black"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  )}
                 </Popover.Button>
               </div>
             </div>
