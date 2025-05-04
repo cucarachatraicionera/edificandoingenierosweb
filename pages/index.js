@@ -15,7 +15,6 @@ import Cursor from "../components/Cursor";
 import data from "../data/portfolio.json";
 
 export default function Home() {
-  // Ref
   const workRef = useRef();
   const aboutRef = useRef();
   const textOne = useRef();
@@ -23,7 +22,6 @@ export default function Home() {
   const textThree = useRef();
   const textFour = useRef();
 
-  // Handling Scroll
   const handleWorkScroll = () => {
     window.scrollTo({
       top: workRef.current.offsetTop,
@@ -93,8 +91,11 @@ export default function Home() {
 
           <Socials className="mt-2 laptop:mt-5" />
         </div>
+
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
-          <h1 className="text-2xl text-bold">Proyectos.</h1>
+          <div className="border-2 border-purple-700 rounded-xl p-4 inline-block shadow-md bg-white/80 mb-6">
+            <h1 className="text-2xl font-bold text-purple-800">Proyectos.</h1>
+          </div>
 
           <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
             {data.projects.map((project) => (
@@ -110,9 +111,11 @@ export default function Home() {
         </div>
 
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0">
-        <h1 className="tablet:m-10 text-3xl font-bold">Servicios.</h1>
+          <div className="border-2 border-emerald-600 rounded-xl p-4 inline-block shadow-md bg-white/80 mb-6 tablet:mx-10">
+            <h1 className="text-3xl font-bold text-emerald-700">Servicios.</h1>
+          </div>
 
-        <div className="mt-5 tablet:m-10 grid grid-cols-1 laptop:grid-cols-2 gap-6">
+          <div className="mt-5 tablet:m-10 grid grid-cols-1 laptop:grid-cols-2 gap-6">
             {data.services.map((service, index) => (
               <ServiceCard
                 key={index}
@@ -122,7 +125,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-        {/* This button should not go into production */}
+
         {process.env.NODE_ENV === "development" && (
           <div className="fixed bottom-5 right-5">
             <Link href="/edit">
@@ -130,12 +133,17 @@ export default function Home() {
             </Link>
           </div>
         )}
+
         <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
-          <h1 className="tablet:m-10 text-2xl text-bold">Quienes somos?.</h1>
+          <div className="border-2 border-blue-600 rounded-xl p-4 inline-block shadow-md bg-white/80 mb-6 tablet:mx-10">
+            <h1 className="text-2xl font-bold text-blue-700">¿Quiénes somos?</h1>
+          </div>
+
           <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
             {data.aboutpara}
           </p>
         </div>
+
         <Footer />
       </div>
     </div>
