@@ -93,8 +93,8 @@ export default function Home() {
         </div>
 
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
-          <div className="border-2 border-purple-700 rounded-xl p-4 inline-block shadow-md bg-white/80 mb-6">
-            <h1 className="text-2xl font-bold text-purple-800">Proyectos.</h1>
+          <div className="border-2 border-yellow-400 rounded-xl p-4 inline-block shadow-md bg-white/80 mb-6">
+            <h1 className="text-2xl font-bold text-black">Proyectos</h1>
           </div>
 
           <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
@@ -111,8 +111,8 @@ export default function Home() {
         </div>
 
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0">
-          <div className="border-2 border-emerald-600 rounded-xl p-4 inline-block shadow-md bg-white/80 mb-6 tablet:mx-10">
-            <h1 className="text-3xl font-bold text-emerald-700">Servicios.</h1>
+          <div className="border-2 border-yellow-400 rounded-xl p-4 inline-block shadow-md bg-white/80 mb-6 tablet:mx-10">
+            <h1 className="text-3xl font-bold text-black">Servicios</h1>
           </div>
 
           <div className="mt-5 tablet:m-10 grid grid-cols-1 laptop:grid-cols-2 gap-6">
@@ -135,8 +135,8 @@ export default function Home() {
         )}
 
         <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
-          <div className="border-2 border-blue-600 rounded-xl p-4 inline-block shadow-md bg-white/80 mb-6 tablet:mx-10">
-            <h1 className="text-2xl font-bold text-blue-700">¿Quiénes somos?</h1>
+          <div className="border-2 border-yellow-400 rounded-xl p-4 inline-block shadow-md bg-white/80 mb-6 tablet:mx-10">
+            <h1 className="text-2xl font-bold text-black">¿Quiénes somos?</h1>
           </div>
 
           <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
@@ -144,7 +144,12 @@ export default function Home() {
           </p>
         </div>
 
-        <Footer />
+        <div className="mt-10 laptop:mt-40 p-2 laptop:p-0">
+          <div className="border-2 border-yellow-400 rounded-xl p-4 inline-block shadow-md bg-white/80 mb-6 tablet:mx-10">
+            <h1 className="text-2xl font-bold text-black">Contacto</h1>
+          </div>
+          <Footer />
+        </div>
       </div>
     </div>
   );
