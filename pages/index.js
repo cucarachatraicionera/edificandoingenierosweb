@@ -139,7 +139,7 @@ export default function Home() {
             <h1 className="text-2xl font-bold text-black">¿Quiénes somos?</h1>
           </div>
 
-          <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
+          <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5 text-justify">
             {data.aboutpara}
           </p>
         </div>
