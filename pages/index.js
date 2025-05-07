@@ -93,7 +93,7 @@ export default function Home() {
         </div>
 
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
-          <div className="border-2 border-yellow-400 rounded-xl p-4 inline-block shadow-md bg-white/80 mb-6">
+          <div className="border-2 border-logoGreen rounded-xl p-4 inline-block shadow-md bg-white/80 mb-6">
             <h1 className="text-2xl font-bold text-black">Proyectos</h1>
           </div>
 
@@ -110,8 +110,11 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Separador visual verde */}
+        <div className="h-2 bg-logoGreen my-10 w-full rounded-full"></div>
+
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0">
-          <div className="border-2 border-yellow-400 rounded-xl p-4 inline-block shadow-md bg-white/80 mb-6 tablet:mx-10">
+          <div className="border-2 border-logoGreen rounded-xl p-4 inline-block shadow-md bg-white/80 mb-6 tablet:mx-10">
             <h1 className="text-3xl font-bold text-black">Servicios</h1>
           </div>
 
@@ -126,6 +129,9 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Separador visual verde */}
+        <div className="h-2 bg-logoGreen my-10 w-full rounded-full"></div>
+
         {process.env.NODE_ENV === "development" && (
           <div className="fixed bottom-5 right-5">
             <Link href="/edit">
@@ -135,7 +141,7 @@ export default function Home() {
         )}
 
         <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
-          <div className="border-2 border-yellow-400 rounded-xl p-4 inline-block shadow-md bg-white/80 mb-6 tablet:mx-10">
+          <div className="border-2 border-logoGreen rounded-xl p-4 inline-block shadow-md bg-white/80 mb-6 tablet:mx-10">
             <h1 className="text-2xl font-bold text-black">¿Quiénes somos?</h1>
           </div>
 
@@ -144,8 +150,11 @@ export default function Home() {
           </p>
         </div>
 
+        {/* Separador visual verde */}
+        <div className="h-2 bg-logoGreen my-10 w-full rounded-full"></div>
+
         <div className="mt-10 laptop:mt-40 p-2 laptop:p-0">
-          <div className="border-2 border-yellow-400 rounded-xl p-4 inline-block shadow-md bg-white/80 mb-6 tablet:mx-10">
+          <div className="border-2 border-logoGreen rounded-xl p-4 inline-block shadow-md bg-white/80 mb-6 tablet:mx-10">
             <h1 className="text-2xl font-bold text-black">Contacto</h1>
           </div>
           <Footer />
