@@ -13,7 +13,6 @@ import Cursor from "../components/Cursor";
 import Carousel from "../components/Carousel";
 import Image from "next/image";
 
-// Local Data
 import data from "../data/portfolio.json";
 
 export default function Home() {
@@ -59,10 +58,8 @@ export default function Home() {
       <div className="gradient-circle-bottom"></div>
 
       <div className="container mx-auto mb-10">
-        <Header
-          handleWorkScroll={handleWorkScroll}
-          handleAboutScroll={handleAboutScroll}
-        />
+        <Header handleWorkScroll={handleWorkScroll} handleAboutScroll={handleAboutScroll} />
+
         <div className="laptop:mt-20 mt-10">
           <div className="mt-5">
             <h1
@@ -71,12 +68,20 @@ export default function Home() {
             >
               {data.headerTaglineOne}
             </h1>
+
+           
+
             <h1
               ref={textTwo}
               className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
             >
               {data.headerTaglineTwo}
             </h1>
+
+             {/* Carousel justo debajo del nombre */}
+             <div className="my-6">
+              <Carousel />
+            </div>
             <h1
               ref={textThree}
               className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
@@ -90,7 +95,6 @@ export default function Home() {
               {data.headerTaglineFour}
             </h1>
           </div>
-
           <Socials className="mt-2 laptop:mt-5" />
         </div>
 
@@ -98,7 +102,6 @@ export default function Home() {
           <div className="border-2 border-logoGreen rounded-xl p-4 inline-block shadow-md bg-white/80 mb-6">
             <h1 className="text-2xl font-bold text-black">Proyectos</h1>
           </div>
-
           <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
             {data.projects.map((project) => (
               <WorkCard
@@ -118,7 +121,6 @@ export default function Home() {
           <div className="border-2 border-logoGreen rounded-xl p-4 inline-block shadow-md bg-white/80 mb-6 tablet:mx-10">
             <h1 className="text-3xl font-bold text-black">Servicios</h1>
           </div>
-
           <div className="mt-5 tablet:m-10 grid grid-cols-1 laptop:grid-cols-2 gap-6">
             {data.services.map((service, index) => (
               <ServiceCard
@@ -145,7 +147,6 @@ export default function Home() {
           <div className="border-2 border-logoGreen rounded-xl p-4 inline-block shadow-md bg-white/80 mb-6 tablet:mx-10">
             <h1 className="text-2xl font-bold text-black">¿Quiénes somos?</h1>
           </div>
-
           <div className="flex flex-col laptop:flex-row items-start laptop:items-center laptop:justify-between gap-6 tablet:m-10">
             <p className="text-xl laptop:text-3xl text-justify w-full laptop:w-3/5">
               Edificando Ingenieros S.A.S. es una empresa dedicada a la construcción y diseño de obras civiles, con amplia experiencia en el sector público y privado. Desde nuestros inicios, nos hemos enfocado en transformar ideas en proyectos reales, ejecutando obras como viviendas campestres, pavimentos urbanos, acueductos, alcantarillados, edificaciones institucionales y más. Contamos con un equipo técnico altamente calificado, maquinaria propia y aliados estratégicos que nos permiten garantizar calidad, cumplimiento y sostenibilidad en cada proyecto. Nuestra pasión por construir va más allá de las estructuras.

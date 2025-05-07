@@ -1,53 +1,46 @@
-import { useState } from "react";
+// components/Carousel/index.js
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 const images = [
-  "/images/construccion1.jpg",
-  "/images/construccion2.jpg",
-  "/images/construccion3.jpg",
-  "/images/construccion4.jpg",
+  "/carousel1.jpeg",
+  "/carousel2.jpeg",
+  "/carousel3.jpeg",
+  "/carousel4.jpeg",
 ];
 
-export default function Carousel() {
-  const [current, setCurrent] = useState(0);
-  const total = images.length;
+const Carousel = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const prev = () => setCurrent((current - 1 + total) % total);
-  const next = () => setCurrent((current + 1) % total);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div className="relative w-full max-w-4xl mx-auto mt-6">
-      <div className="overflow-hidden rounded-lg shadow-lg">
-        <img
-          src={images[current]}
-          alt={`Construcción ${current + 1}`}
-          className="w-full h-[300px] object-cover transition-all duration-500"
-        />
-      </div>
-
-      <button
-        onClick={prev}
-        className="absolute top-1/2 left-3 transform -translate-y-1/2 bg-logoGreen text-white px-3 py-1 rounded-full shadow-md"
-      >
-        ◀
-      </button>
-      <button
-        onClick={next}
-        className="absolute top-1/2 right-3 transform -translate-y-1/2 bg-logoGreen text-white px-3 py-1 rounded-full shadow-md"
-      >
-        ▶
-      </button>
-
-      <div className="flex justify-center gap-2 mt-3">
-        {images.map((_, index) => (
-          <div
-            key={index}
-            onClick={() => setCurrent(index)}
-            className={`w-3 h-3 rounded-full cursor-pointer ${
-              current === index ? "bg-logoGreen" : "bg-gray-300"
-            }`}
-          ></div>
-        ))}
-      </div>
+    <div className="relative w-full h-[300px] laptop:h-[500px] overflow-hidden rounded-xl shadow-lg">
+      {images.map((img, idx) => (
+        <div
+          key={idx}
+          className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
+            idx === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+          }`}
+        >
+          <Image
+            src={img}
+            alt={`Carousel image ${idx + 1}`}
+            layout="fill"
+            objectFit="cover"
+            priority={idx === 0}
+          />
+        </div>
+      ))}
     </div>
   );
-}
+};
+
+export default Carousel;
