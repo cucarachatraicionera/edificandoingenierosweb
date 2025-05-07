@@ -22,11 +22,15 @@ const ServiceCard = ({ name, description, index }) => {
       >
         <h1 className="text-3xl font-bold text-black">{name || "Servicio"}</h1>
 
-        {index === 0 ? (
+        {(index === 0 || index === 1) ? (
           <div className="mt-5 cursor-pointer" onClick={() => setIsModalOpen(true)}>
             <Image
-              src="/fotoestudiosydiseños.png"
-              alt="Diseños y Estudio"
+              src={
+                index === 0
+                  ? "/fotoestudiosydiseños.png"
+                  : "/construccion.jpeg"
+              }
+              alt={name}
               width={800}
               height={500}
               className="rounded-lg shadow-md w-full h-auto object-cover hover:opacity-80 transition"
