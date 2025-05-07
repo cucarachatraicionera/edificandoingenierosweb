@@ -11,6 +11,21 @@ const ServiceCard = ({ name, description, index }) => {
     setMounted(true);
   }, []);
 
+  const getImageByIndex = () => {
+    switch (index) {
+      case 0:
+        return "/fotoestudiosydiseños.png";
+      case 1:
+        return "/construccion.jpeg";
+      case 2:
+        return "/acabados.jpeg";
+      default:
+        return null;
+    }
+  };
+
+  const imageSrc = getImageByIndex();
+
   return (
     <>
       <div
@@ -22,14 +37,10 @@ const ServiceCard = ({ name, description, index }) => {
       >
         <h1 className="text-3xl font-bold text-black">{name || "Servicio"}</h1>
 
-        {(index === 0 || index === 1) ? (
+        {imageSrc ? (
           <div className="mt-5 cursor-pointer" onClick={() => setIsModalOpen(true)}>
             <Image
-              src={
-                index === 0
-                  ? "/fotoestudiosydiseños.png"
-                  : "/construccion.jpeg"
-              }
+              src={imageSrc}
               alt={name}
               width={800}
               height={500}
