@@ -12,7 +12,6 @@ import Link from "next/link";
 import Cursor from "../components/Cursor";
 import Carousel from "../components/Carousel";
 import Image from "next/image";
-
 import data from "../data/portfolio.json";
 
 export default function Home() {
@@ -24,19 +23,11 @@ export default function Home() {
   const textFour = useRef();
 
   const handleWorkScroll = () => {
-    window.scrollTo({
-      top: workRef.current.offsetTop,
-      left: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: workRef.current.offsetTop, left: 0, behavior: "smooth" });
   };
 
   const handleAboutScroll = () => {
-    window.scrollTo({
-      top: aboutRef.current.offsetTop,
-      left: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: aboutRef.current.offsetTop, left: 0, behavior: "smooth" });
   };
 
   useIsomorphicLayoutEffect(() => {
@@ -60,38 +51,27 @@ export default function Home() {
       <div className="container mx-auto mb-10">
         <Header handleWorkScroll={handleWorkScroll} handleAboutScroll={handleAboutScroll} />
 
+        
+
         <div className="laptop:mt-20 mt-10">
           <div className="mt-5">
-            <h1
-              ref={textOne}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-4/5 mob:w-full laptop:w-4/5"
-            >
+            <h1 ref={textOne} className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-4/5 mob:w-full laptop:w-4/5">
               {data.headerTaglineOne}
             </h1>
-
-           
-
-            <h1
-              ref={textTwo}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
-            >
+            <h1 ref={textTwo} className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5">
               {data.headerTaglineTwo}
             </h1>
-
-             {/* Carousel justo debajo del nombre */}
-             <div className="my-6">
+            
+            
+            <div className="mt-10">
               <Carousel />
             </div>
-            <h1
-              ref={textThree}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
-            >
+        
+
+            <h1 ref={textThree} className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5">
               {data.headerTaglineThree}
             </h1>
-            <h1
-              ref={textFour}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
-            >
+            <h1 ref={textFour} className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5">
               {data.headerTaglineFour}
             </h1>
           </div>
@@ -134,6 +114,20 @@ export default function Home() {
         </div>
 
         <div className="h-2 bg-logoGreen my-10 w-full rounded-full"></div>
+
+        <div className="w-full my-10">
+          <video
+            className="w-full h-auto rounded-xl shadow-lg"
+            controls
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src="/video.mp4" type="video/mp4" />
+            Tu navegador no soporta el video.
+          </video>
+        </div>
 
         {process.env.NODE_ENV === "development" && (
           <div className="fixed bottom-5 right-5">
