@@ -19,6 +19,8 @@ const ServiceCard = ({ name, description, index }) => {
         return "/construccion.jpeg";
       case 2:
         return "/acabados.jpeg";
+      case 3:
+        return "/servicios.png";
       default:
         return null;
     }
@@ -35,10 +37,18 @@ const ServiceCard = ({ name, description, index }) => {
             : "hover:bg-slate-50"
         } hover:scale-105 link`}
       >
-        <h1 className="text-3xl font-bold text-black">{name || "Servicio"}</h1>
+        <h1
+          className="text-3xl font-bold text-black cursor-pointer"
+          onClick={() => setIsModalOpen(true)}
+        >
+          {name || "Servicio"}
+        </h1>
 
         {imageSrc ? (
-          <div className="mt-5 cursor-pointer" onClick={() => setIsModalOpen(true)}>
+          <div
+            className="mt-5 cursor-pointer touch-manipulation"
+            onClick={() => setIsModalOpen(true)}
+          >
             <Image
               src={imageSrc}
               alt={name}
@@ -58,8 +68,14 @@ const ServiceCard = ({ name, description, index }) => {
       </div>
 
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
-          <div className="relative bg-white p-6 rounded-xl max-w-lg w-full mx-4 text-black shadow-lg">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70"
+          onClick={() => setIsModalOpen(false)}
+        >
+          <div
+            className="relative bg-white p-6 rounded-xl max-w-lg w-full mx-4 text-black shadow-lg"
+            onClick={(e) => e.stopPropagation()} // Evita que el modal se cierre al hacer clic dentro
+          >
             <button
               onClick={() => setIsModalOpen(false)}
               className="absolute top-2 right-4 text-black text-2xl font-bold"
