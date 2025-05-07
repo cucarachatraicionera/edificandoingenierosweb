@@ -11,7 +11,7 @@ import Button from "../components/Button";
 import Link from "next/link";
 import Cursor from "../components/Cursor";
 import Carousel from "../components/Carousel";
-
+import Image from "next/image";
 
 // Local Data
 import data from "../data/portfolio.json";
@@ -99,8 +99,6 @@ export default function Home() {
             <h1 className="text-2xl font-bold text-black">Proyectos</h1>
           </div>
 
-                  {/* Proyectos*/}
-
           <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
             {data.projects.map((project) => (
               <WorkCard
@@ -114,7 +112,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Separador visual verde */}
         <div className="h-2 bg-logoGreen my-10 w-full rounded-full"></div>
 
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0">
@@ -128,12 +125,12 @@ export default function Home() {
                 key={index}
                 name={service.title}
                 description={service.description}
+                index={index}
               />
             ))}
           </div>
         </div>
 
-        {/* Separador visual verde */}
         <div className="h-2 bg-logoGreen my-10 w-full rounded-full"></div>
 
         {process.env.NODE_ENV === "development" && (
@@ -149,12 +146,23 @@ export default function Home() {
             <h1 className="text-2xl font-bold text-black">¿Quiénes somos?</h1>
           </div>
 
-          <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5 text-justify">
-            {data.aboutpara}
-          </p>
+          <div className="flex flex-col laptop:flex-row items-start laptop:items-center laptop:justify-between gap-6 tablet:m-10">
+            <p className="text-xl laptop:text-3xl text-justify w-full laptop:w-3/5">
+              Edificando Ingenieros S.A.S. es una empresa dedicada a la construcción y diseño de obras civiles, con amplia experiencia en el sector público y privado. Desde nuestros inicios, nos hemos enfocado en transformar ideas en proyectos reales, ejecutando obras como viviendas campestres, pavimentos urbanos, acueductos, alcantarillados, edificaciones institucionales y más. Contamos con un equipo técnico altamente calificado, maquinaria propia y aliados estratégicos que nos permiten garantizar calidad, cumplimiento y sostenibilidad en cada proyecto. Nuestra pasión por construir va más allá de las estructuras.
+            </p>
+            <div className="w-full laptop:w-2/5">
+              <Image
+                src="/quienessomos.jpeg"
+                alt="Quienes Somos"
+                width={800}
+                height={800}
+                layout="responsive"
+                className="rounded-xl shadow-lg object-cover"
+              />
+            </div>
+          </div>
         </div>
 
-        {/* Separador visual verde */}
         <div className="h-2 bg-logoGreen my-10 w-full rounded-full"></div>
 
         <div className="mt-10 laptop:mt-40 p-2 laptop:p-0">
