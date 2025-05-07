@@ -99,6 +99,8 @@ export default function Home() {
             <h1 className="text-2xl font-bold text-black">Proyectos</h1>
           </div>
 
+                  {/* Proyectos*/}
+
           <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
             {data.projects.map((project) => (
               <WorkCard
