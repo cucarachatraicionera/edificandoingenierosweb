@@ -1,6 +1,6 @@
 import { Resend } from "resend";
 
-const resend = new Resend("re_BVkEyTtf_L94P6dq5bByZpkzVFwbaFE6C");
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -12,7 +12,10 @@ export default async function handler(req, res) {
   try {
     const data = await resend.emails.send({
       from: "Edificando Web <no-reply@edificandoingenieros.com>",
-      to: ["edificandoingenierossas@gmail.com"],
+      to: [
+        "edificandoingenierossas@gmail.com",
+        "backupcliente@gmail.com", // ← agrega aquí cualquier otro correo adicional
+      ],
       subject: `Mensaje nuevo: ${tema || "Contacto Web"}`,
       html: `
         <h3>Nuevo mensaje del formulario de contacto:</h3>
