@@ -34,12 +34,11 @@ const FooterAlt = () => {
         {/* Columna 3: Contacto */}
         <div className="flex flex-col">
           <h3 className="text-sm font-bold text-logoGreen mb-2">CONTACTO</h3>
-          <p className="text-sm">PBX: +57 (601) 376 0030</p>
-          <p className="text-sm">Carrera 9 # 9-60</p>
-          <p className="text-sm">Chinchiná, Caldas – Colombia</p>
-          <div className="mt-4 space-y-2">
-            <button className="bg-logoGreen text-white px-4 py-2 text-sm rounded-md">PROVEEDORES</button><br />
-            <button className="bg-logoGreen text-white px-4 py-2 text-sm rounded-md">TRABAJA CON NOSOTROS</button>
+          <p className="text-sm">PBX: +57 (311) 772 0385</p>
+          <p className="text-sm">Calle 54 No. 23 – 113A</p>
+          <p className="text-sm">Manizales, Caldas – Colombia</p>
+          <div className="mt-4">
+            <button className="bg-logoGreen text-white px-4 py-2 text-sm rounded-md">PROVEEDORES</button>
           </div>
         </div>
       </div>
