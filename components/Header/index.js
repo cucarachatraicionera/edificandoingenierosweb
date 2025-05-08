@@ -66,28 +66,22 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                     <Button onClick={() => router.push("/blog")}>Proyectos</Button>
                   )}
                   {showResume && (
-                    <Button onClick={() => window.open("mailto:edificandoingenierossas@gmail.com")}>
-                      Resume
-                    </Button>
+                    <Button onClick={() => router.push("/resume")}>Resume</Button>
                   )}
-                  <Button onClick={() => window.open("mailto:edificandoingenierossas@gmail.com")}>
+                  <Button onClick={() => window.open("https://www.edificandoingenieros.com/contacto", "_blank")}>
                     Contacto
                   </Button>
                 </div>
               ) : (
                 <div className="grid grid-cols-1">
-                  <Button onClick={() => router.push("/")} classes="first:ml-1">
-                    Inicio
-                  </Button>
+                  <Button onClick={() => router.push("/")}>Inicio</Button>
                   {showBlog && (
                     <Button onClick={() => router.push("/blog")}>Proyectos</Button>
                   )}
                   {showResume && (
-                    <Button onClick={() => router.push("/resume")} classes="first:ml-1">
-                      Resume
-                    </Button>
+                    <Button onClick={() => router.push("/resume")}>Resume</Button>
                   )}
-                  <Button onClick={() => window.open("mailto:edificandoingenierossas@gmail.com")}>
+                  <Button onClick={() => window.open("https://www.edificandoingenieros.com/contacto", "_blank")}>
                     Contacto
                   </Button>
                 </div>
@@ -118,11 +112,9 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
               <Button onClick={() => router.push("/blog")}>Proyectos</Button>
             )}
             {showResume && (
-              <Button onClick={() => router.push("/resume")} classes="first:ml-1">
-                Resume
-              </Button>
+              <Button onClick={() => router.push("/resume")}>Resume</Button>
             )}
-            <Button onClick={() => window.open("mailto:edificandoingenierossas@gmail.com")}>
+            <Button onClick={() => window.open("https://www.edificandoingenieros.com/contacto", "_blank")}>
               Contacto
             </Button>
           </div>
@@ -133,11 +125,9 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
               <Button onClick={() => router.push("/blog")}>Proyectos</Button>
             )}
             {showResume && (
-              <Button onClick={() => router.push("/resume")} classes="first:ml-1">
-                Resume
-              </Button>
+              <Button onClick={() => router.push("/resume")}>Resume</Button>
             )}
-            <Button onClick={() => window.open("mailto:edificandoingenierossas@gmail.com")}>
+            <Button onClick={() => window.open("https://www.edificandoingenieros.com/contacto", "_blank")}>
               Contacto
             </Button>
           </div>
